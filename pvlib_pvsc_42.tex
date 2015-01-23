@@ -477,7 +477,7 @@ While MATLAB remains a common choice in many public and private laboratories, th
 Python is now the language used in introductory programming courses at a number of top universities \cite{Per11, acmpython}. 
 It is elegant, easy to read and write, portable across platforms, powerful, free and open source, and it has a large scientific computing community. 
 With the appropriate scientific packages installed (NumPy, SciPy, Matplotlib, statsmodels, pandas), Python can easily replicate most MATLAB and R functionality. 
-This means a single language can be used for the entire data collection, processing, and analysis workflow reducing the mental overhead of programming in multiple languages. 
+This means a single language can be used for the entire data collection, processing, and analysis workflow, thus reducing the mental overhead of programming in multiple languages. 
 
 Andrews et. al. \cite{andrews} introduced the PVLIB-Python toolbox in 2014 and outlined its three main principles:
 
@@ -495,9 +495,6 @@ The first PVLIB-Python implementation succeeded in providing nearly all of the P
 It also succeeded in establishing collaborative development environment on GitHub \cite{pvlib-github}. 
 Over a dozen forks (independent copies) of the project now exist on GitHub. 
 Many of these users have contributed substantial changes to the source code, cataloged issues, or discussed ways of improving the code through GitHub.
-
-However, the original implementation suffered from several deficiencies that we addressed, or are actively working to address, and describe below. 
-
 
 
 \section{Growth of the PVLIB-Python package}
@@ -543,7 +540,8 @@ Python does not have a C-like struct, but the initial PVLIB-Python attempted to 
 By replacing the awkward Python version of a struct with a simple \texttt{pvlib.location.Location} class we obtained more readable and more functional code.
 Objects of this \texttt{Location} class have added functionality such as more flexible constructors, better timezone handling, and nicer string representations.
 Most importantly, the \texttt{Location} class can be extended by users for their own purposes.
-For example, a user may define her own \texttt{SolarPlant} class that inherits from the \texttt{Location} class, so it can interact with the rest of PVLIB in expected ways, but also has additional user-defined attributes and functionality.
+For example, a user may define her own \texttt{SolarPlant} class that inherits from the \texttt{Location} class. 
+\texttt{SolarPlant} objects could then interact with the rest of PVLIB in the same ways as \texttt{Location} objects, but also have additional user-defined attributes and functionality.
 
 
 \subsubsection{Logging and debugging}
@@ -562,7 +560,7 @@ Wildcard imports can sometimes lead to namespace problems and are often avoided 
 \subsection{Testing and continuous integration}
 
 Andrews et. al. described the need for both functional (does the code return a value or crash) and physical (does the code return the correct value) tests of the PVLIB code \cite{andrews}.
-These tests are often called unittests, in reference to the fact that there is ideally one test for each unit of code.
+These tests are often called unit tests, in reference to the fact that there is ideally one test for each unit of code.
 Here, a unit of code is typically a function, or a function called with a specific set of parameters.
 PVLIB-Python now uses the \texttt{nose} package \cite{nosetests} to make writing tests faster and easier.
 This package has been used to increase the testing coverage of the code to 75\%.
@@ -610,7 +608,7 @@ We believe that the following roadmap may reasonably take between 6 and 9 months
 \item Release new version.
 \end{enumerate}
 
-Due to the major changes in governance proposed above, any further discussion would be pure speculation.
+We defer further discussion of a roadmap until the PVLIB-Python governance is better established.
 
 
 
@@ -621,7 +619,7 @@ We intend to establish a GitHub wiki to catalog PVLIB-Python use cases. Such a w
 
 \section{Conclusion}
 We described significant improvements to the PVLIB-Python package between the period June 2014 and January 2015 that make the code easier to use, easier to maintain, better tested, and better documented. 
-Much more work remains, and we encourage readers to visit the project development website hosted by GitHub \cite{pvlib-github}.
+Much more work remains, and we encourage readers to visit the GitHub project development website \cite{pvlib-github}.
 
 % conference papers do not normally have an appendix
 
