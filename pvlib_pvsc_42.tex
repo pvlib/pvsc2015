@@ -478,8 +478,12 @@ This means a single language can be used for the entire data collection, process
 Andrews et. al. \cite{andrews} introduced the PVLIB-Python toolbox in 2014 and outlined its three main principles:
 
 \begin{enumerate}
-\item Take advantage of the python programming language, to ensure free access to academic and commercial users\item Designed for collaborative development, and backed by a rigorous method to include the contributions of authors and researchers into the package\item Backed by a full testing and validation suite to ensure stability of the package and to allow for validation of model results against real-world performance data.
+\item Take advantage of the python programming language, to ensure free access to academic and commercial users
+\item Designed for collaborative development, and backed by a rigorous method to include the contributions of authors and researchers into the package
+\item Backed by a full testing and validation suite to ensure stability of the package and to allow for validation of model results against real-world performance data.
 \end{enumerate}
+
+Overall, the goal of this package is not to superceed other established commercial and public PV modelling packages, such as Helioscope, PVSyst, SAM, and PVWatts. Instead, PVLIB-Python adds a flexible and accessible analysis package which can be utilized to derive deep insights about the performance of PV systems and the tools used to  model them. By providing a code-level and modular approach to system modeling, users are able to model and analyze each portion of the PV system performance chain, and are able to utilize the significant data analysis capabilities of Python to analyze these large sets of data. 
 
 The first PVLIB-Python implementation succeeded in providing nearly all of the PVLIB-Matlab functionality in python.
 It also succeeded in establishing collaborative development environment on GitHub \cite{pvlib-github}. 
@@ -490,9 +494,9 @@ However, the original implementation suffered from several deficiencies that we 
 
 
 
-\section{Initial PVLIB-Python Deficiencies}
+\section{Growth of the PVLIB-Python package}
 
-The main PVLIB-Python deficiencies were:
+The initial release of the package provided a direct translation and adaptation of the PVLIB-MATLAB version of the code. Though functional, this translation introduced deficiencies into the package which have subsequently been addressed. The main PVLIB-Python deficiencies were:
 
 \begin{itemize}
 \item The package did not conform to standard python design patterns and conventions.
@@ -511,10 +515,9 @@ These fanciful words may imply simply a matter of taste or preference for how so
 First, we chose to implement PVLIB in the python language for reasons that centered on the fundamental nature of python and the associated scientific python libraries, described above and in \cite{andrews}. 
 It is reasonable for new users and developers to expect a python package to look and behave like other python packages, and for it to be written using the same design patterns.
 Second, pythonic python is usually simpler and uses more of the well-tested and built-in language's functionality.
-This makes the code easier to understand and less likely to contain hidden bugs. 
+This makes the code easier to understand and less likely to contain hidden bugs.  In order to address this, we made PVLIB-Python more pythonic in the following ways.
 
-We made PVLIB-Python more pythonic in many ways. 
-The most obvious change may be to the package structure. 
+\subsubsection{Package Structure} 
 The original PVLIB-Python, as well as the current PVLIB-Matlab, contains all functions in files, or modules, that are name the same as the function. 
 This pattern causes serious module import problems in python, and it neglects the advantages of grouping similar functions into a single module for logical consistency.
 We now group functions of a similar type into one module. 
@@ -524,7 +527,8 @@ A TMY reading function then becomes \texttt{pvlib.tmy.readtmy3}.
 Similar changes have been applied library-wide, yielding a more pythonic library structure that improves readability and organization. 
 %\holmgren{if time/space permits, consider adding a table of modules and functions}
 
-Next, we replaced several design patterns that are hold-overs from PVLIB-Matlab. 
+\subsubsection{Pythonic modification of design patterns}
+Several design patterns existed in the python package which were hold-overs from PVLIB-Matlab. 
 For example, PVLIB-Matlab uses a struct to represent a location. 
 Python does not have a C-like struct, but the initial PVLIB-Python attempted to keep the same pattern by creating a struct-like object.
 By replacing the awkward python version of a struct with a simple \texttt{pvlib.location.Location} class we obtained more readable and more functional code.
@@ -532,8 +536,10 @@ Objects of this \texttt{Location} class have added functionality such as more fl
 Most importantly, the \texttt{Location} class can be extended by users for their own purposes.
 For example, a user may define her own \texttt{SolarPlant} class that inherits from the \texttt{Location} class, so it can interact with the rest of PVLIB in expected ways, but also has additional user-defined attributes and functionality.
 
-Additional changes include using python's logging capabilities instead of print statements, relying on built-in python exceptions to alert the user to problems, making extensive use of \texttt{NaN} or \texttt{inf} values instead of setting values to 0, and applying PEP8 style and naming conventions \cite{pep8} to some of the code.
+\subsubsection{Logging and debugging}
+Additional changes include using python's logging capabilities instead of print statements, relying on built-in python exceptions to alert the user to problems, making extensive use of \texttt{NaN} or \texttt{inf} values instead of setting values to 0, and applying PEP8 style and naming conventions \cite{pep8} to some of the code. In addition, automatic input variable checking on design functions was removed, as it reduced the overall compatibility of the code. 
 
+\subsection{Accessibility for Matlab users}
 Rewriting the code to make it more pythonic leaves us with a significant problem: the package becomes less familiar to PVLIB-Matlab users. 
 We have attempted to lessen this problem in several ways.
 First, we have provided extensive documentation in the form of webpages and, perhaps most importantly, IPython notebooks that demonstrate where to find key functionality, how to tie together different components, and how to write good python in the context of problems that PVLIB-Matlab users are familiar with.
@@ -545,13 +551,10 @@ Wildcard imports can sometimes lead to namespace problems and are often avoided 
 \subsection{Testing and Continuous Integration}
 
 Andrews et. al. described the need for both functional (does the code return a value or crash) and physical (does the code return the correct value) tests of the PVLIB code \cite{andrews}.
-Unfortunately, the first version of the library had few meaningful tests of either type.
 These tests are often called unittests, in reference to the fact that there is ideally one test for each unit of code.
 Here, a unit of code is typically a function, or a function called with a specific set of parameters.
 
-Of course, there's no substitute for simply taking the time to systematically write more tests, and we have done this.
-We adopted the \texttt{nose} package \cite{nosetests} to make writing tests faster and easier.
-We estimate that fewer than 10\% of the code was functionally tested in the initial release, but this is now at 75\%.
+PVLIB-Python uses the \texttt{nose} package \cite{nosetests} to make writing tests faster and easier. This package has been used to increase the testing coverage of the code to 75\%.
 
 Next, we adopted a \emph{continuous integration} service, TravisCI, to automatically test the code every time that a user pushes a new commit to a GitHub repository or submits a pull request to merge their changes into another repository. 
 For an example of TravisCI applied to PVLIB, please see the UARENForecasting/PVLIB{\_}Python fork \cite{uaren-pvlib}.
@@ -653,7 +656,8 @@ The authors gratefully acknowledge contributions of many others to PVLIB-Matlab 
 \bibitem{nada}
 \holmgren{Order references correctly.}
 
-\bibitem{andrews}Robert W. Andrews, Joshua S. Stein, Clifford Hansen, and Daniel Riley, ``Introduction to the Open Source PV LIB for Python Photovoltaic System Modelling Package", \emph {in 40th IEEE Photovoltaic Specialist Conference}, 2014. 
+\bibitem{andrews}
+Robert W. Andrews, Joshua S. Stein, Clifford Hansen, and Daniel Riley, ``Introduction to the Open Source PV LIB for Python Photovoltaic System Modelling Package", \emph {in 40th IEEE Photovoltaic Specialist Conference}, 2014. 
 
 \bibitem{pvlibstein}
 J. S. Stein, ``The Photovoltaic Performance Modeling Collaborative (PVPMC)", \emph{Photovoltaic Specialists Conference}, 2012.
