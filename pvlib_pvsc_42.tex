@@ -518,22 +518,22 @@ We discuss the largest changes and improvements relevant to these issues below, 
 \subsection{Python design patterns, conventions, and the Zen of Python}
 
 The original PVLIB-Python package implemented nearly all of PVLIB-MATLAB in Python, but it did not generally use idiomatic Python.
-Idiomatic Python is often referred to as \emph{Pythonic} \cite{pythonic}, or conforming to the \emph{Zen of Python} \cite{zenofpython}. 
+Idiomatic Python is often referred to as \emph{pythonic} \cite{pythonic}, or conforming to the \emph{Zen of Python} \cite{zenofpython}. 
 These fanciful words may imply simply a matter of taste or preference for how software should be written, but the implications for the package are actually much larger.
 First, we chose to implement PVLIB in the Python language for reasons that centered on the fundamental nature of Python and the associated scientific Python libraries, described above and in \cite{andrews}. 
 It is reasonable for new users and developers to expect a Python package to look and behave like other Python packages, and for it to be written using the same design patterns.
-Second, Pythonic Python is usually simpler and uses more of the language's well-tested and built-in functionality.
+Second, pythonic Python is usually simpler and uses more of the language's well-tested and built-in functionality.
 This makes the code easier to understand and less likely to contain hidden bugs.
-In order to address this, we made PVLIB-Python more Pythonic in the following ways.
+In order to address this, we made PVLIB-Python more pythonic in the following ways.
 
-\subsubsection{Package Structure} 
+\subsubsection{Package structure} 
 The original PVLIB-Python, as well as the current PVLIB-MATLAB, contains all functions in files, or modules, that are named the same as the function. 
 This pattern causes serious module import problems in Python, and it neglects the advantages of grouping similar functions into a single module for logical consistency.
 We now group functions of a similar type into one module. 
 For example, the TMY reading functions \texttt{pvl{\_}readtmy2} and \texttt{pvl{\_}readtmy3} now reside in a single module \texttt{tmy}. 
 Next, we removed \texttt{pvl{\_}} from all functions and modules -- after all, they are all contained in a packaged named \texttt{pvlib}. 
 A TMY reading function then becomes \texttt{pvlib.tmy.readtmy3}. 
-Similar changes have been applied library-wide, yielding a more Pythonic library structure that improves readability and organization. 
+Similar changes have been applied library-wide, yielding a more pythonic library structure that improves readability and organization. 
 %\holmgren{if time/space permits, consider adding a table of modules and functions}
 
 \subsubsection{Pythonic modification of design patterns}
@@ -551,7 +551,7 @@ Additional changes include using Python's logging capabilities instead of print 
 Furthermore, automatic input variable checking on design functions was removed, as it reduced the overall compatibility of the code. 
 
 \subsection{Accessibility for MATLAB users}
-Rewriting the code to make it more Pythonic leaves us with a significant problem: the package becomes less familiar to PVLIB-MATLAB users. 
+Rewriting the code to make it more pythonic leaves us with a significant problem: the package becomes less familiar to PVLIB-MATLAB users. 
 We have attempted to lessen this problem in several ways.
 First, we have provided extensive documentation in the form of webpages and, perhaps most importantly, IPython notebooks that demonstrate where to find key functionality, how to tie together different components, and how to write good Python in the context of problems that PVLIB-MATLAB users are familiar with.
 Second, we propose a wildcard import statement pattern that puts the common PVLIB-MATLAB functions in the namespace of the Python script. 
@@ -559,7 +559,7 @@ For example, the TMY import functions described below can be accessed in the tra
 Wildcard imports can sometimes lead to namespace problems and are often avoided in Python, but this functionality can provide PVLIB-MATLAB users with a more familiar interface while gradually becoming accustomed to Python design patterns.
 
 
-\subsection{Testing and Continuous Integration}
+\subsection{Testing and continuous integration}
 
 Andrews et. al. described the need for both functional (does the code return a value or crash) and physical (does the code return the correct value) tests of the PVLIB code \cite{andrews}.
 These tests are often called unittests, in reference to the fact that there is ideally one test for each unit of code.
