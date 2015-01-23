@@ -375,7 +375,7 @@
 % affiliations
 
 \author{\IEEEauthorblockN{William F. Holmgren\IEEEauthorrefmark{1}, Robert W. Andrews\IEEEauthorrefmark{2}, Antonio T. Lorenzo\IEEEauthorrefmark{3}, \\Joshua S. Stein\IEEEauthorrefmark{4}}\\
-\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Atmospheric Sciences, University of Arizona, Tucson, AZ, United States \\ \IEEEauthorrefmark{2}Heliolytics, Toronto, ON, Canada \\ \IEEEauthorrefmark{3}College of Optical Sciences, University of Arizona, Tucson, AZ, United States\\ \IEEEauthorrefmark{4}Sandia National Laboratories, Albuquerque, NM, United States}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Atmospheric Sciences, University of Arizona, Tucson, AZ, 85721, United States \\ \IEEEauthorrefmark{2}Heliolytics, 483 Bay St. Toronto, ON, M5G2C9, Canada \\ \IEEEauthorrefmark{3}College of Optical Sciences, University of Arizona, Tucson, AZ, 85721, United States\\ \IEEEauthorrefmark{4}Sandia National Laboratories, Albuquerque, NM, 87185, USA}}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -474,7 +474,7 @@ PV modeling, software, data analysis, performance modeling
 The PVLIB Toolbox is a well-established MATLAB library for photovoltaic modeling and analysis \cite{pvlibstein}. 
 It was originally developed at Sandia National Laboratories and has been expanded by contributions from members of the Photovoltaic Performance and Modeling Collaboration (PVPMC).
 While MATLAB remains a common choice in many public and private laboratories, the popularity of Python has grown tremendously in the last decade. 
-Python is now the language used in introductory programming courses at a number of top universities \cite{acmpython}. 
+Python is now the language used in introductory programming courses at a number of top universities \cite{Per11, acmpython}. 
 It is elegant, easy to read and write, portable across platforms, powerful, free and open source, and it has a large scientific computing community. 
 With the appropriate scientific packages installed (NumPy, SciPy, Matplotlib, statsmodels, pandas), Python can easily replicate most MATLAB and R functionality. 
 This means a single language can be used for the entire data collection, processing, and analysis workflow reducing the mental overhead of programming in multiple languages. 
@@ -482,14 +482,14 @@ This means a single language can be used for the entire data collection, process
 Andrews et. al. \cite{andrews} introduced the PVLIB-Python toolbox in 2014 and outlined its three main principles:
 
 \begin{enumerate}
-\item Take advantage of the Python programming language, to ensure free access to academic and commercial users
-\item Designed for collaborative development, and backed by a rigorous method to include the contributions of authors and researchers into the package
+\item Take advantage of the Python programming language, to ensure free access to academic and commercial users.
+\item Designed for collaborative development, and backed by a rigorous method to include the contributions of authors and researchers into the package.
 \item Backed by a full testing and validation suite to ensure stability of the package and to allow for validation of model results against real-world performance data.
 \end{enumerate}
 
-Overall, the goal of this package is not to supersede other established commercial and public PV modelling packages, such as Helioscope, PVSyst, SAM, and PVWatts. 
+Overall, the goal of this package is not to supersede other established commercial and public PV modeling packages, such as Helioscope, PVSyst, SAM, and PVWatts. 
 Instead, PVLIB-Python adds a flexible and accessible analysis package which can be utilized to derive deep insights about the performance of PV systems and the tools used to model them.
-By providing a code-level and modular approach to system modeling, users are able to model each portion of the PV system performance chain, and are able to utilize the significant data analysis capabilities of Python to analyze these large sets of data. 
+By providing a code-level and modular approach to system modeling, users are able to model and analyze each portion of the PV system performance chain, and are able to utilize the significant data analysis capabilities of Python to analyze these large sets of data. 
 
 The first PVLIB-Python implementation succeeded in providing nearly all of the PVLIB-MATLAB functionality in Python.
 It also succeeded in establishing collaborative development environment on GitHub \cite{pvlib-github}. 
@@ -659,47 +659,47 @@ ATL thanks the University of Arizona Renewable Energy Network for support.
 % http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
 % The IEEEtran BibTeX style support page is at:
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
+\bibliography{IEEEabrv,pvlib_pvsc_42}
 %
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+%\begin{thebibliography}{1}
+%
+%\bibitem{andrews}
+%Robert W. Andrews, Joshua S. Stein, Clifford Hansen, and Daniel Riley, ``Introduction to the Open Source PV LIB for Python Photovoltaic System Modelling Package", \emph {in 40th IEEE Photovoltaic Specialist Conference}, 2014. 
+%
+%\bibitem{pvlibstein}
+%J. S. Stein, ``The Photovoltaic Performance Modeling Collaborative (PVPMC)", \emph{Photovoltaic Specialists Conference}, 2012.
 
-\bibitem{pvlibstein}
-J. S. Stein, ``The Photovoltaic Performance Modeling Collaborative (PVPMC)", \emph{Photovoltaic Specialists Conference}, 2012.
+%\bibitem{acmpython}
+%P. Guo, ``Python is Now the Most Popular Introductory Teaching Language at Top U.S. Universities", http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext Accessed January 22, 2015.
 
-\bibitem{acmpython}
-P. Guo, ``Python is Now the Most Popular Introductory Teaching Language at Top U.S. Universities", http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext Accessed January 22, 2015.
+%\bibitem{pvlib-github}
+%GitHub contributors, ``Sandia-Labs/PVLIB{\_}Python", https://github.com/Sandia-Labs/PVLIB{\_}Python Accessed January 22, 2015.
 
-\bibitem{andrews}
-Robert W. Andrews, Joshua S. Stein, Clifford Hansen, and Daniel Riley, ``Introduction to the Open Source PV LIB for Python Photovoltaic System Modelling Package", \emph {in 40th IEEE Photovoltaic Specialist Conference}, 2014. 
-
-\bibitem{pvlib-github}
-GitHub contributors, ``Sandia-Labs/PVLIB{\_}Python", https://github.com/Sandia-Labs/PVLIB{\_}Python Accessed January 22, 2015.
-
-\bibitem{pythonic}
-M. Faassen, ``What is Pythonic?", http://blog.startifact.com/posts/older/what-is-pythonic.html Accessed January 22, 2015.
-
-\bibitem{zenofpython}
-T. Peters, ``PEP 20 -- The Zen of Python", https://www.python.org/dev/peps/pep-0020/ Accessed January 22, 2015.
-
-\bibitem{pep8}
-G. van Rossum and N. Coghlan, ``PEP 8 -- Style Guide for Python Code", https://www.python.org/dev/peps/pep-0008/ Accessed January 22, 2015.
-
-\bibitem{nosetests}
-nose contributors, https://nose.readthedocs.org/en/latest/ Accessed January 22, 2015.
-
-\bibitem{uaren-pvlib}
-W. F. Holmgren, A. T. Lorenzo, and GitHub contributors, ``UARENForecasting/PVLIB{\_}Python", https://github.com/UARENForecasting/PVLIB{\_}Python Accessed January 22, 2015.
-
-\bibitem{ipython-gov}
-IPython IPEP 29 contributors, ``IPEP 29: Project Governance", https://github.com/ipython/ipython/wiki/IPEP-29\%3A-Project-Governance Accessed January 22, 2015.
-
-\bibitem{ipython-wiki}
-IPython wiki contributors, ``A gallery of interesting IPython Notebooks" and ``Projects using IPython", https://github.com/ipython/ipython/wiki/ Accessed January 22, 2015.
+%\bibitem{uaren-pvlib}
+%W. F. Holmgren, A. T. Lorenzo, and GitHub contributors, ``UARENForecasting/PVLIB{\_}Python", https://github.com/UARENForecasting/PVLIB{\_}Python Accessed January 22, 2015.
+%
+%\bibitem{zenofpython}
+%T. Peters, ``PEP 20 -- The Zen of Python", https://www.python.org/dev/peps/pep-0020/ Accessed January 22, 2015.
+%
+%\bibitem{nosetests}
+%nose contributors, https://nose.readthedocs.org/en/latest/ Accessed January 22, 2015.
+%
+%\bibitem{pythonic}
+%M. Faassen, ``What is Pythonic?", http://blog.startifact.com/posts/older/what-is-pythonic.html Accessed January 22, 2015.
+%
+%\bibitem{pep8}
+%G. van Rossum and N. Coghlan, ``PEP 8 -- Style Guide for Python Code", https://www.python.org/dev/peps/pep-0008/ Accessed January 22, 2015.
+%
+%\bibitem{ipython-gov}
+%IPython IPEP 29 contributors, ``IPEP 29: Project Governance", https://github.com/ipython/ipython/wiki/IPEP-29\%3A-Project-Governance Accessed January 22, 2015.
+%
+%\bibitem{ipython-wiki}
+%IPython wiki contributors, ``A gallery of interesting IPython Notebooks" and ``Projects using IPython", https://github.com/ipython/ipython/wiki/ Accessed January 22, 2015.
 
 %\bibitem {Yamaguchi}
 %M. Yamaguchi, A. Khan, S.J. Taylor, M. Imaizumi, T. Hisamatsu, and S. Matsuda, ``A detailed model to improve the radiation-resistance of Si space solar cells,\emph{Fundamentals of Solar Cells} vol. 46, pp. 2133-2138, 1999.
@@ -714,7 +714,7 @@ IPython wiki contributors, ``A gallery of interesting IPython Notebooks" and ``P
 %H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
 %  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
 
-\end{thebibliography}
+%\end{thebibliography}
 %\smallskip
 %Note: For the Summary paper submission only, references to the authors own work must be redacted to preserve the new double-blind reviewing requirements.
 
