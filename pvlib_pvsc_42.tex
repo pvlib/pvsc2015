@@ -425,9 +425,9 @@ We also describe a roadmap for the future of the PVLIB-Python package.
 % then you can use LaTeX's standard command \boldmath at the very start
 % of the abstract to achieve this. Many IEEE journals/conferences frown on
 % math in the abstract anyway.
-\begin{keywords}
+\begin{IEEEkeywords}
 PV modeling, software, data analysis, performance modeling
-\end{keywords}
+\end{IEEEkeywords}
 % no keywords
 
 
@@ -475,9 +475,9 @@ The PVLIB Toolbox is a well-established MATLAB library for photovoltaic modeling
 It was originally developed at Sandia National Laboratories and has been expanded by contributions from members of the Photovoltaic Performance and Modeling Collaboration (PVPMC).
 While MATLAB remains a common choice in many public and private laboratories, the popularity of Python has grown tremendously in the last decade. 
 Python is now the language used in introductory programming courses at a number of top universities \cite{Per11, acmpython}. 
-It is elegant, easy to read and write, portable across platforms, powerful, free and open source, and it has a large scientific computing community. 
-With the appropriate scientific packages installed (NumPy, SciPy, Matplotlib, statsmodels, pandas), Python can easily replicate most MATLAB and R functionality. 
-This means a single language can be used for the entire data collection, processing, and analysis workflow, thus reducing the mental overhead of programming in multiple languages. 
+It is elegant, easy to read and write, portable across platforms, free and open source, and it has a large scientific computing community. 
+With the appropriate scientific packages installed (NumPy, SciPy, Matplotlib, statsmodels, pandas), Python provides a powerful alternative to MATLAB and R. 
+The scientific Python stack also enables the use of a single language for the entire data collection, processing, and analysis workflow, which can result in faster development with fewer bugs. 
 
 Andrews et. al. \cite{andrews} introduced the PVLIB-Python toolbox in 2014 and outlined its three main principles:
 
@@ -488,18 +488,22 @@ Andrews et. al. \cite{andrews} introduced the PVLIB-Python toolbox in 2014 and o
 \end{enumerate}
 
 Overall, the goal of this package is not to supersede other established commercial and public PV modeling packages, such as Helioscope, PVSyst, SAM, and PVWatts. 
-Instead, PVLIB-Python adds a flexible and accessible analysis package which can be utilized to derive deep insights about the performance of PV systems and the tools used to model them.
-By providing a code-level and modular approach to system modeling, users are able to model and analyze each portion of the PV system performance chain, and are able to utilize the significant data analysis capabilities of Python to analyze these large sets of data. 
+Instead, PVLIB-Python adds a flexible, accessible, and collaboratively-developed analysis package which can be utilized to derive deep insights about the performance of PV systems and the tools used to model them.
+By providing a code-level and modular approach to system modeling, users are able to model and analyze each portion of the PV system performance chain, and are able to utilize the significant data analysis capabilities of Python to analyze large data sets.
+The PVLIB-Python source code is hosted on GitHub \cite{pvlib-github}.
+The source code to generate the figures in this manuscript and poster is also hosted on GitHub \cite{pvlib-pvsc2015-github}.
 
-The first PVLIB-Python implementation succeeded in providing nearly all of the PVLIB-MATLAB functionality in Python.
-It also succeeded in establishing collaborative development environment on GitHub \cite{pvlib-github}. 
+The first PVLIB-Python implementation \cite{sandia-github} succeeded in providing nearly all of the PVLIB-MATLAB functionality in Python.
+It also succeeded in establishing collaborative development environment on GitHub. 
 Over a dozen forks (independent copies) of the project now exist on GitHub. 
 Many of these users have contributed substantial changes to the source code, cataloged issues, or discussed ways of improving the code through GitHub.
+Users do not need significant experience with Python to make significant contributions to PVLIB-Python.
+In fact, making small contributions to PVLIB-Python source code, unit tests, and documentation can be an effective way for new users to learn how to use Python and GitHub.
 
 
 \section{Growth of the PVLIB-Python package}
 
-The initial release of the package provided a direct translation and adaptation of the PVLIB-MATLAB version of the code.
+The initial release of the package provided a direct translation and adaptation of most of the PVLIB-MATLAB version of the code.
 Though functional, this translation exposed a number of problems for using PVLIB in a Python environment.
 We focused on improving the following three issues that existed in the initial release:
 
@@ -509,7 +513,7 @@ We focused on improving the following three issues that existed in the initial r
 \item The package did not have an install script.
 \end{itemize}
 
-We discuss the largest changes and improvements relevant to these issues below, but we encourage readers to visit the PVLIB-Python GitHub issues page for a more comprehensive discussion.
+We summarize the largest changes and improvements relevant to these issues below, but we encourage readers to visit the PVLIB-Python GitHub issues webpage for comprehensive discussions regarding these changes.
 
 
 \subsection{Python design patterns, conventions, and the Zen of Python}
@@ -527,10 +531,24 @@ In order to address this, we made PVLIB-Python more pythonic in the following wa
 The original PVLIB-Python, as well as the current PVLIB-MATLAB, contains all functions in files, or modules, that are named the same as the function. 
 This pattern causes serious module import problems in Python, and it neglects the advantages of grouping similar functions into a single module for logical consistency.
 We now group functions of a similar type into one module. 
-For example, the TMY reading functions \texttt{pvl{\_}readtmy2} and \texttt{pvl{\_}readtmy3} now reside in a single module \texttt{tmy}. 
+For example, the TMY reading functions \texttt{pvl{\_}readtmy2} and \texttt{pvl{\_}readtmy3} now reside in a single module \texttt{tmy}.
 Next, we removed \texttt{pvl{\_}} from all functions and modules -- after all, they are all contained in a packaged named \texttt{pvlib}. 
 A TMY reading function then becomes \texttt{pvlib.tmy.readtmy3}. 
-Similar changes have been applied library-wide, yielding a more pythonic library structure that improves readability and organization. 
+Similar changes have been applied library-wide, yielding a more pythonic library structure that improves readability and organization.
+Several additional PVLIB-MATLAB features, such as single axis tracker models (see Figure \ref{tracker}) were also ported to PVLIB-Python.
+
+\begin{figure}
+\includegraphics[width=9cm]{abq-tracker.eps}
+\includegraphics[width=9cm]{abq-tracker-irrad.eps}
+\caption{\label{tracker}PVLIB-Python simulation of a single axis tracker, with backtracking, located near Albuquerque, NM, for June 1, 2015. The simulation outputs include (top) the angle of incidence (blue), panel surface azimuth (green), panel surface tilt (red), and angle of rotation about the tracking axis (purple) and (bottom) total plane of array irradiance (blue), beam component of plane of array irradiance (green), and diffuse plane of array irradiance (red). This example simulation used the Ineichen model to generate clear sky DNI, GHI, and DHI, the Hay-Davies model to generate the diffuse plane of array irradiance, and an isotropic ground diffuse model with an albedo of 0.25. This example may be compared to a similar simulation in the PVLIB-MATLAB documentation.}
+\end{figure}
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{fixed_sapm.eps}
+\caption{\label{sapm}Simulation of a fixed-tilt PV system on April 1, 2015, in Tucson, AZ, using PVLIB-Python's implementation of the Sandia Array Performance Model. The top row of subfigures shows currents, voltages, and maximum power as a function of time of day, while the bottom row shows the same as a function of effective irradiance. PVLIB-Python was used to load the Sandia Module Database from NREL's website, calculate solar position, clear sky data, airmass, cell temperature, and module temperature, and finally run the Sandia Array Performance Model in 9 lines of code. Detailed simulation parameters may be found online \cite{pvlib-pvsc2015-github}.}
+\end{figure*}
+
 %\holmgren{if time/space permits, consider adding a table of modules and functions}
 
 \subsubsection{Pythonic modification of design patterns}
@@ -542,20 +560,22 @@ Objects of this \texttt{Location} class have added functionality such as more fl
 Most importantly, the \texttt{Location} class can be extended by users for their own purposes.
 For example, a user may define her own \texttt{SolarPlant} class that inherits from the \texttt{Location} class. 
 \texttt{SolarPlant} objects could then interact with the rest of PVLIB in the same ways as \texttt{Location} objects, but also have additional user-defined attributes and functionality.
-
+Additional changes include using making extensive use of \texttt{NaN} or \texttt{inf} values instead of setting values to 0, and applying PEP8 style and naming conventions \cite{pep8} to some of the code. 
+Furthermore, most automatic input variable checking on design functions was removed as it is largely unnecessary in a Python environment and increased the complexity of the code. 
 
 \subsubsection{Logging and debugging}
-Additional changes include using Python's logging capabilities instead of print statements, relying on built-in Python exceptions to alert the user to problems, making extensive use of \texttt{NaN} or \texttt{inf} values instead of setting values to 0, and applying PEP8 style and naming conventions \cite{pep8} to some of the code. 
-Furthermore, automatic input variable checking on design functions was removed, as it reduced the overall compatibility of the code. 
+It is standard Python practice to use Python's built-in logging capabilities instead of print statements, so we replaced print statements with logging calls.
+We are also now relying on built-in Python exceptions to alert the user to problems.
+Using Python exceptions makes the PVLIB-Python library easier to integrate into a user's own programs.
 
 \subsection{Accessibility for MATLAB users}
 Rewriting the code to make it more pythonic leaves us with a significant problem: the package becomes less familiar to PVLIB-MATLAB users. 
 We have attempted to lessen this problem in several ways.
-First, we have provided extensive documentation in the form of webpages and, perhaps most importantly, IPython notebooks that demonstrate where to find key functionality, how to tie together different components, and how to write good Python in the context of problems that PVLIB-MATLAB users are familiar with.
-Second, we propose a wildcard import statement pattern that puts the common PVLIB-MATLAB functions in the namespace of the Python script. 
-For example, the TMY import functions described below can be accessed in the traditional manner with the command \texttt{from pvlib.api import *}, or more specifically, \texttt{from pvlib.tmy import *}. 
+First, we have provided extensive documentation, discussed more below, in the form of webpages and IPython notebooks that demonstrate where to find key functionality, how to tie together different components, and how to write good Python in the context of problems that PVLIB-MATLAB users are familiar with.
+Second, wildcard import statements can be used to put the common PVLIB-MATLAB functions in the namespace of the Python script. 
+For example, the TMY reading functions can be imported using \texttt{from pvlib.tmy import *}.
+The PVLIB-Python GitHub community has discussed adding the ability to import all of the frequently used top-level functions using a command such as \texttt{from pvlib.api import *}.
 Wildcard imports can sometimes lead to namespace problems and are often avoided in Python, but this functionality can provide PVLIB-MATLAB users with a more familiar interface while gradually becoming accustomed to Python design patterns.
-
 
 \subsection{Testing and continuous integration}
 
@@ -563,14 +583,15 @@ Andrews et. al. described the need for both functional (does the code return a v
 These tests are often called unit tests, in reference to the fact that there is ideally one test for each unit of code.
 Here, a unit of code is typically a function, or a function called with a specific set of parameters.
 PVLIB-Python now uses the \texttt{nose} package \cite{nosetests} to make writing tests faster and easier.
-This package has been used to increase the testing coverage of the code to 75\%.
+This package has been used to increase the testing coverage of the code to above 90\%.
 
-Next, we adopted a \emph{continuous integration} service, TravisCI, to automatically test the code every time that a user pushes a new commit to a GitHub repository or submits a pull request to merge their changes into another repository. 
-For an example of TravisCI applied to PVLIB, please see the UARENForecasting/PVLIB{\_}Python fork \cite{uaren-pvlib}.
-This service will soon be applied to the official repository.
+Next, we adopted a continuous integration service, TravisCI, to automatically test the code every time that submits a pull request to merge their changes into another repository.
+This helps to ensure that a contributor's changes to one part of the library does not inadvertently break another part of the library.
+A comprehensive test suite coupled with continuous integration services also makes it relatively easy to test a library against many permutations of user environments.
+As of June 1, 2015, we automatically test the PVLIB-Python package against Python versions 2.7 through 3.4, and pandas versions 0.13.1 through 0.16.1.
 
-Writing new tests is a great way for new users to contribute to PVLIB-Python. We particularly need physical tests, ideally benchmarked against other PV modeling programs.
-
+Writing new tests is a great way for new users to contribute to PVLIB-Python.
+We particularly need physical tests, ideally benchmarked against other PV modeling programs.
 
 \subsection{Installation}
 
@@ -578,38 +599,49 @@ Most popular Python packages use one of several tools to enable users to install
 Once installed, a Python package can be accessed regardless of the directory in which the user started the Python interpreter.
 The original PVLIB-Python did not contain a usable installation script, which made using it and developing it more challenging.
 We wrote a \texttt{setup.py} script to enable PVLIB-Python to be installed and to be developed more effectively.
-This also enables PVLIB-Python to be placed on the Python Package Index (PyPI), the most common resource for installing Python packages.
+We also added PVLIB-Python to the Python Package Index (PyPI), the most common resource for installing Python packages \cite{pvlib-pypi}.
+PVLIB-Python can now be installed with a simple \texttt{pip install pvlib-python} command.
+Future versions of PVLIB-Python will be installable using the \texttt{conda} package manager.
 
 
-%\begin{figure}
-%\centering
-%\includegraphics[width=9cm]{image1.png}
-%\caption{ Example of readable plot using different colors and line styles for clarity.}
-%\end{figure}
+\subsection{Documentation}
+Good documentation is essential to the success of any software.
+We documented PVLIB-Python in two ways.
+First, we created html and pdf documentation of the Python modules and functions.
+Most of this documentation is an edited version of the PVLIB-MATLAB documentation.
+We also documented the major differences between the Python and MATLAB projects.
+PVLIB-Python uses the standard Python tools sphinx and numpydoc to build html and pdf documentation from function and module docstrings.
+We use readthedocs.org to automatically build new versions of the documentation every time a change is made to the source code in the GitHub repository.
+Figure \ref{rtd} shows a screenshot of the documentation homepage.
+The second form of documentation is a collection of IPython notebooks.
+IPython notebooks provide an informative combination of explanatory text and inline, executable code.
+These notebooks can be viewed and downloaded at the GitHub project page or using the nbviewer.org tool. 
+We strongly encourage the community to contribute to both forms of the PVLIB-Python documentation.
+\begin{figure}
+\includegraphics[width=9cm]{rtd.png}
+\caption{\label{rtd}Screenshot of PVLIB-Python documentation homepage hosted at http://pvlib-python.readthedocs.org.}
+\end{figure}
 
 
 \section{Roadmap}
 
-As of this writing, the roadmap for PVLIB-Python is unfinished. 
-We propose one possible roadmap, but we encourage the community suggest improvements. 
-We believe that the following roadmap may reasonably take between 6 and 9 months. 
+We propose one possible short-term roadmap for PVLIB-Python, and encourage the community suggest improvements.
+We hope that PVLIB-Python administrative duties will rotate through the community on an annual to biannual basis.
 
 \begin{enumerate}
-\item Initial PVLIB-Python implementation released on GitHub (completed in June, 2014).
-\item Initial PVLIB-Python released to PyPI and documentation released to readthedocs.org and/or pvpmc.sandia.gov.
-\item Establish a new GitHub organization, perhaps named \texttt{pvlib}, to administer the official PVLIB-Python project.
-\item Merge the developments described here into the master branch.
-\item Release updated package on PyPI, release updated documentation on readthedocs.org and/or pvpmc.sandia.gov.
+\item Initial PVLIB-Python implementation released on GitHub under Sandia organization (completed in June, 2014) \cite{sandia-github}.
+\item Establish a new GitHub organization, \texttt{pvlib}, to collaboratively administer the official PVLIB-Python project (completed February, 2015) \cite{pvlib-github}.
+\item Put documentation on readthedocs.org \cite{pvlib-rtd} and use TravisCI (completed February, 2015).
+\item First PVLIB-Python release on PyPI \cite{pvlib-pypi} (completed April, 2015).
 \item Establish PVLIB-Python governance rules. Scientific Python packages, in particular IPython IPEP 29 \cite{ipython-gov}, may be a good resource.
 \item Bring PVLIB-Python up to date with PVLIB-MATLAB 1.2.
 \item Reach 100\% functional test coverage.
 \item Release new version.
 \item Develop and implement common physical tests for PVLIB-Python and PVLIB-MATLAB.
+\item Encourage users to contribute new models, improve existing model implementations, testing, and documentation.
 \item Release new version.
+\item Rotate PVLIB-Python administrative duties.
 \end{enumerate}
-
-We defer further discussion of a roadmap until the PVLIB-Python governance is better established.
-
 
 
 \section{Use cases}
@@ -618,7 +650,7 @@ We intend to establish a GitHub wiki to catalog PVLIB-Python use cases. Such a w
 
 
 \section{Conclusion}
-We described significant improvements to the PVLIB-Python package between the period June 2014 and January 2015 that make the code easier to use, easier to maintain, better tested, and better documented. 
+We described significant improvements to the PVLIB-Python package between the period June 2014 and May 2015 that make the library easier to use, easier to maintain, better tested, and better documented. 
 Much more work remains, and we encourage readers to visit the GitHub project development website \cite{pvlib-github}.
 
 % conference papers do not normally have an appendix
@@ -626,7 +658,7 @@ Much more work remains, and we encourage readers to visit the GitHub project dev
 % use section* for acknowledgment
 \section*{Acknowledgment}
 The authors gratefully acknowledge Sandia National Laboratories for the initial development of PVLIB-MATLAB and PVLIB-Python and the ongoing contributions of many others to the project.
-A list of PVLIB-Python contributors may be found on its GitHub repository \cite{pvlib-github}.
+A list of PVLIB-Python contributors may be found on the GitHub repository \cite{pvlib-github} and in the online documentation \cite{pvlib-rtd}.
 Sandia National Laboratories is a multi-program laboratory managed and operated by Sandia Corporation, a wholly owned subsidiary of Lockheed Martin Corporation, for the U.S. Department of Energy's National Nuclear Security Administration under contract DE-AC04-94AL85000.
 WFH thanks the Department of Energy (DOE) Office of Energy Efficiency and Renewable Energy (EERE) Postdoctoral Research Award for support. 
 ATL thanks the University of Arizona Renewable Energy Network for support.
