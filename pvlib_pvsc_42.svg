@@ -15,7 +15,7 @@
    id="svg2"
    sodipodi:version="0.32"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="pvlib_pvsc2015.svg"
+   sodipodi:docname="pvlib_pvsc_42.svg"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
    inkscape:export-filename="/home/alex/Documents/Semester4/Muendliche_Praesentationen/Plakat/Schwarze_Strahlung.png"
    inkscape:export-xdpi="90"
@@ -32,8 +32,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.23188533"
-     inkscape:cx="1192.6466"
-     inkscape:cy="1673.0048"
+     inkscape:cx="2616.687"
+     inkscape:cy="1318.5169"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
@@ -45998,7 +45998,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -46095,19 +46095,19 @@
            id="rect15251" /></flowRegion><flowPara
          id="flowPara15263"
          style="font-size:56px;fill:#ffffff">BLÖ</flowPara></flowRoot>    <flowRoot
-       style="font-size:81.88811493px;font-style:normal;font-weight:normal;text-align:start;line-height:100%;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
+       style="font-size:81.88811493000000000px;font-style:normal;font-weight:normal;text-align:start;line-height:100%;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:arial;-inkscape-font-specification:arial;font-stretch:normal;font-variant:normal"
        id="flowRoot15507"
        xml:space="preserve"
        transform="matrix(1.2549589,0,0,1.5857257,-338.64439,-1301.7594)"><flowRegion
          id="flowRegion15509"><rect
-           style="font-size:81.88811493px;line-height:100%;fill:#000000;fill-opacity:1"
+           style="font-size:81.88811493000000000px;line-height:100%;fill:#000000;fill-opacity:1;-inkscape-font-specification:arial;font-family:arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
            y="534.20685"
            x="148.57143"
            height="316.7933"
            width="3298.3445"
            id="rect15511" /></flowRegion><flowPara
          id="flowPara15523"
-         style="font-size:99.24285889px;text-align:center;line-height:100%;text-anchor:middle;fill:#000000;fill-opacity:1">PVLIB Python 2015</flowPara></flowRoot>    <flowRoot
+         style="font-size:99.24285888999999400px;text-align:center;line-height:100%;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:arial;font-family:arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">PVLIB Python 2015</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot16899"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -46119,56 +46119,56 @@
            x="1490.9851"
            y="317.15903" /></flowRegion><flowPara
          id="flowPara16905" /></flowRoot>    <flowRoot
-       style="font-size:56px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
+       style="font-size:56px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial"
        id="flowRoot4235"
        xml:space="preserve"
        transform="matrix(0.91143022,0,0,0.92329445,278.92892,-701.58673)"><flowRegion
          id="flowRegion4237"><rect
-           style="font-size:56px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+           style="font-size:56px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
            y="549.45355"
            x="-232.83952"
            height="673.56641"
            width="4101.314"
            id="rect4239" /></flowRegion><flowPara
-         style="font-size:80.66774098px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         style="font-size:80.66774098000000500px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
          id="flowPara20711">William F. Holmgren<flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12156">1</flowSpan>, Robert W. Andrews<flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12158">2</flowSpan>, Antonio T. Lorenzo<flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12160">3</flowSpan>, Joshua S. Stein<flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12162">4</flowSpan></flowPara><flowPara
-         style="font-size:42px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         style="font-size:42px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
          id="flowPara12164" /><flowPara
-         style="font-size:73.32190704px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         style="font-size:73.32190703999999900px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
          id="flowPara12174"><flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12181">1</flowSpan>Dept. of Atmospheric Sciences, Univ. of Arizona, Tucson, AZ; <flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12168">2</flowSpan>Heliolytics, Toronto, ON;</flowPara><flowPara
-         style="font-size:73.32190704px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         style="font-size:73.32190703999999900px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
          id="flowPara12962"><flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12964">3</flowSpan>College of Optical Sciences, Univ. of Arizona, Tucson, AZ; <flowSpan
-   style="font-size:52.32502117px;baseline-shift:super;fill:#000000;fill-opacity:1"
+   style="font-size:52.32502116999999200px;baseline-shift:super;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
    id="flowSpan12172">4</flowSpan>Sandia National Laboratories, Albuquerque, NM</flowPara><flowPara
-         style="font-size:42px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1"
+         style="font-size:42px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;-inkscape-font-specification:Arial;font-family:Arial"
          id="flowPara12154" /></flowRoot>    <flowRoot
-       style="font-size:56.56261293px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
+       style="font-size:56.56261293px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial;font-stretch:normal;font-variant:normal;writing-mode:lr;line-height:125%"
        id="flowRoot4271"
        xml:space="preserve"
        transform="matrix(0.91143022,0,0,1.0000119,-0.95975485,2193.5489)"><flowRegion
          id="flowRegion4273"><rect
-           style="font-size:56.56261293px;fill:#000000"
+           style="font-size:56.56261293px;fill:#000000;-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%"
            y="534.20685"
            x="148.57143"
            height="316.7933"
            width="3298.3445"
            id="rect4275" /></flowRegion><flowPara
          id="flowPara4285"
-         style="font-size:56.56261293px;fill:#000000">42nd IEEE Photovoltaics Specialists Conference</flowPara></flowRoot>    <flowRoot
+         style="font-size:56.56261293000000000px;fill:#000000;-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">42nd IEEE Photovoltaics Specialists Conference</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4303"
        style="font-size:16px;font-style:normal;font-weight:normal;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Bitstream Vera Sans"
@@ -46287,19 +46287,19 @@
            x="424.26407"
            y="673.96735" /></flowRegion><flowPara
          id="flowPara24445" /></flowRoot>    <flowRoot
-       style="font-size:56.56261444px;font-style:normal;font-weight:normal;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
+       style="font-size:56.56261443999999700px;font-style:normal;font-weight:normal;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial;font-stretch:normal;font-variant:normal"
        id="flowRoot46252"
        xml:space="preserve"
        transform="matrix(0.91143022,0,0,1.0000119,2593.9083,2193.0296)"><flowRegion
          id="flowRegion46254"><rect
-           style="font-size:56.56261444px;text-align:end;text-anchor:end;fill:#000000"
+           style="font-size:56.56261443999999700px;text-align:end;text-anchor:end;fill:#000000;-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal"
            y="534.20685"
            x="148.57143"
            height="105.36473"
            width="852.63019"
            id="rect46256" /></flowRegion><flowPara
          id="flowPara46266"
-         style="font-size:56.56261444px;text-align:end;text-anchor:end;fill:#000000">holmgren@email.arizona.edu</flowPara></flowRoot>    <rect
+         style="font-size:56.56261443999999700px;text-align:end;text-anchor:end;fill:#000000;-inkscape-font-specification:Arial;font-family:Arial;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal">holmgren@email.arizona.edu</flowPara></flowRoot>    <rect
        y="2078.2014"
        x="3774.8823"
        height="2.7778106"
@@ -46308,7 +46308,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:none" />
     <text
        xml:space="preserve"
-       style="font-size:54px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-size:54.00000001px;font-style:normal;font-weight:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial;font-stretch:normal;font-variant:normal;writing-mode:lr"
        x="140.17755"
        y="2716.9434"
        id="text21519"
@@ -46327,7 +46327,7 @@
        style="fill:#ffffff;fill-opacity:1;stroke:none;display:inline" />
     <text
        xml:space="preserve"
-       style="font-size:54px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       style="font-size:54px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:100%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
        x="3039.8545"
        y="1630.3251"
        id="text19966"
@@ -49755,9 +49755,9 @@
        transform="translate(0,-620.07886)" />
     <flowRoot
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Serif;-inkscape-font-specification:Serif"
+       style="font-size:38px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Century Gothic;-inkscape-font-specification:Century Gothic"
        id="flowRoot14345"
-       transform="translate(20,-10)"><flowRegion
+       transform="translate(20,-26)"><flowRegion
          id="flowRegion14347"><use
            x="0"
            y="0"
@@ -49767,7 +49767,7 @@
            height="3600" /></flowRegion><flowPara
          id="flowPara14351">The authors gratefully acknowledge Sandia National  Laboratories for the initial development of PVLIB-MATLAB and PVLIB-Python and the ongoing contributions of many others to the project. A list of PVLIB-Python contributors may be found on the GitHub repository. Sandia National Laboratories is a multi-program laboratory managed and operated by Sandia Corporation, a wholly owned subsidiary of Lockheed Martin Corporation, for the U.S. Department of Energy’s National Nuclear Security Administration under contract DE-AC04-94AL85000. WFH thanks the Department of Energy (DOE) Office of Energy Efficiency and Renewable Energy (EERE) Postdoctoral Research Award for support. ATL thanks the University of Arizona Renewable Energy Network for support.</flowPara></flowRoot>    <text
        xml:space="preserve"
-       style="font-size:54px;font-style:normal;font-weight:normal;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
+       style="font-size:54px;font-style:normal;font-weight:normal;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial;-inkscape-font-specification:Arial;font-stretch:normal;font-variant:normal"
        x="3513.4084"
        y="2842.5569"
        id="text14357"><tspan
