@@ -426,7 +426,7 @@ We also describe a roadmap for the future of the PVLIB-Python package.
 % of the abstract to achieve this. Many IEEE journals/conferences frown on
 % math in the abstract anyway.
 \begin{IEEEkeywords}
-PV modeling, software, data analysis, performance modeling
+data analysis, performance modeling, PV modeling, software
 \end{IEEEkeywords}
 % no keywords
 
@@ -501,7 +501,7 @@ Users do not need significant experience with Python to make significant contrib
 In fact, making small contributions to PVLIB-Python source code, unit tests, and documentation can be an effective way for new users to learn how to use Python and GitHub.
 
 
-\section{Growth of the PVLIB-Python package}
+\section{Growth of the PVLIB-Python Package}
 
 The initial release of the package provided a direct translation and adaptation of most of the PVLIB-MATLAB version of the code.
 Though functional, this translation exposed a number of problems for using PVLIB in a Python environment.
@@ -516,7 +516,7 @@ We focused on improving the following three issues that existed in the initial r
 We summarize the largest changes and improvements relevant to these issues below, but we encourage readers to visit the PVLIB-Python GitHub issues webpage for comprehensive discussions regarding these changes.
 
 
-\subsection{Python design patterns, conventions, and the Zen of Python}
+\subsection{Python Design Patterns, Conventions, and the Zen of Python}
 
 The original PVLIB-Python package implemented nearly all of PVLIB-MATLAB in Python, but it did not generally use idiomatic Python.
 Idiomatic Python is often referred to as \emph{pythonic} \cite{pythonic}, or conforming to the \emph{Zen of Python} \cite{zenofpython}. 
@@ -527,7 +527,7 @@ Second, pythonic Python is usually simpler and uses more of the language's well-
 This makes the code easier to understand and less likely to contain hidden bugs.
 In order to address this, we made PVLIB-Python more pythonic in the following ways.
 
-\subsubsection{Package structure} 
+\subsubsection{Package Structure} 
 The original PVLIB-Python, as well as the current PVLIB-MATLAB, contains all functions in files, or modules, that are named the same as the function. 
 This pattern causes serious module import problems in Python, and it neglects the advantages of grouping similar functions into a single module for logical consistency.
 We now group functions of a similar type into one module. 
@@ -551,7 +551,7 @@ Several additional PVLIB-MATLAB features, such as single axis tracker models (se
 
 %\holmgren{if time/space permits, consider adding a table of modules and functions}
 
-\subsubsection{Pythonic modification of design patterns}
+\subsubsection{Pythonic Modification of Design Patterns}
 Several design patterns existed in the Python package which were hold-overs from PVLIB-MATLAB. 
 For example, PVLIB-MATLAB uses a struct to represent a location. 
 Python does not have a C-like struct, but the initial PVLIB-Python attempted to keep the same pattern by creating a struct-like object.
@@ -563,12 +563,12 @@ For example, a user may define her own \texttt{SolarPlant} class that inherits f
 Additional changes include using making extensive use of \texttt{NaN} or \texttt{inf} values instead of setting values to 0, and applying PEP8 style and naming conventions \cite{pep8} to some of the code. 
 Furthermore, most automatic input variable checking on design functions was removed as it is largely unnecessary in a Python environment and increased the complexity of the code. 
 
-\subsubsection{Logging and debugging}
+\subsubsection{Logging and Debugging}
 It is standard Python practice to use Python's built-in logging capabilities instead of print statements, so we replaced print statements with logging calls.
 We are also now relying on built-in Python exceptions to alert the user to problems.
 Using Python exceptions makes the PVLIB-Python library easier to integrate into a user's own programs.
 
-\subsection{Accessibility for MATLAB users}
+\subsection{Accessibility for MATLAB Users}
 Rewriting the code to make it more pythonic leaves us with a significant problem: the package becomes less familiar to PVLIB-MATLAB users. 
 We have attempted to lessen this problem in several ways.
 First, we have provided extensive documentation, discussed more below, in the form of webpages and IPython notebooks that demonstrate where to find key functionality, how to tie together different components, and how to write good Python in the context of problems that PVLIB-MATLAB users are familiar with.
@@ -577,7 +577,7 @@ For example, the TMY reading functions can be imported using \texttt{from pvlib.
 The PVLIB-Python GitHub community has discussed adding the ability to import all of the frequently used top-level functions using a command such as \texttt{from pvlib.api import *}.
 Wildcard imports can sometimes lead to namespace problems and are often avoided in Python, but this functionality can provide PVLIB-MATLAB users with a more familiar interface while gradually becoming accustomed to Python design patterns.
 
-\subsection{Testing and continuous integration}
+\subsection{Testing and Continuous Integration}
 
 Andrews et. al. described the need for both functional (does the code return a value or crash) and physical (does the code return the correct value) tests of the PVLIB code \cite{andrews}.
 These tests are often called unit tests, in reference to the fact that there is ideally one test for each unit of code.
@@ -644,7 +644,7 @@ We hope that PVLIB-Python administrative duties will rotate through the communit
 \end{enumerate}
 
 
-\section{Use cases}
+\section{Use Cases}
 
 We intend to establish a GitHub wiki to catalog PVLIB-Python use cases. Such a wiki may be modeled on the IPython project's \emph{A gallery of interesting IPython Notebooks} and \emph{Projects using IPython} \cite{ipythonwiki}. 
 
