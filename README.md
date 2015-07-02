@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.19258.svg)](http://dx.doi.org/10.5281/zenodo.19258)
+
 # pvlib-pvsc2015
 This repository contains files relevant to the PVLIB-Python PVSC 2015 poster coauthored by Will Holmgren, Rob Andrews, Tony Lorenzo, and Josh Stein. 
 
